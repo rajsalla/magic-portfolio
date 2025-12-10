@@ -14,7 +14,8 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://demo.magic-portfolio.com";
+// TODO: Update this to your production URL after deployment (e.g., https://rajsalla.vercel.app or your custom domain)
+const baseURL: string = "https://rajsalla.vercel.app";
 
 const routes: RoutesConfig = {
   "/": true,
