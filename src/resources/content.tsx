@@ -2,18 +2,18 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Raj",
+  lastName: "Salla",
+  name: `Raj Salla`,
+  role: "iOS and AI/ML Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "rsalla72@gmail.com",
+  location: "America/Thunder_Bay", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -25,25 +25,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/rajsalla",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/raj-salla/",
     essential: true,
   },
   {
@@ -60,23 +48,23 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>iOS and AI/ML Engineer</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">LinePal</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/linepal",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I'm an iOS and AI/ML engineer with 5+ years building production apps and on-device intelligence. From clinical workflows at Vensora to voice synthesis pipelines at Vosyn, my work sits at the intersection of mobile experience and applied AI.
 </>
   ),
 };
@@ -95,16 +83,17 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/raj-salla/15min",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I'm an iOS and AI/ML engineer with 5+ years building production apps and on-device intelligence.
+        From clinical workflows at Vensora to voice synthesis pipelines at Vosyn, my work sits at the
+        intersection of mobile experience and applied AI. I help startups bring their iOS and AI solutions
+        to life — and I care deeply about building technology that genuinely helps people.
       </>
     ),
   },
@@ -113,41 +102,81 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Vensora Inc (United States - Remote)",
+        timeframe: "May 2025 - Present",
+        role: "iOS and AI/ML Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led end-to-end iPad development integrating BLE peripherals, real-time processing, and Core ML on-device using Swift and MVVM, delivering accessible, localized interfaces
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Translated PRDs into reliable clinical workflows; partnered with product, design, and QA to define release criteria and accessibility standards, improving workflow reliability by 35%
+          </>,
+          <>
+            Implemented audio capture and signal pipelines with telemetry and robust error handling, reducing audio processing latency by 42%
+          </>,
+          <>
+            Drove AI model deployment with Core ML and CI/CD to streamline automation, boosting automation efficiency by 30%
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "LinePal (Ontario, Canada - Remote)",
+        timeframe: "Jun 2024 - Present",
+        role: "iOS Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Architected and delivered a production iOS app from scratch with Swift, SwiftUI, and MVVM; modularized components and state management for maintainability
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Built and integrated a Django backend with RESTful APIs; designed contracts, auth flows, and data models for dependable client-server operations
+          </>,
+          <>
+            Optimized custom UI components and animations; improved rendering performance and responsiveness, increasing session duration by 28% and retention by 21%
+          </>,
+          <>
+            Managed App Store releases via TestFlight and AppStore Connect; instrumented Firebase analytics achieving 99.6% crash-free sessions
+          </>,
+          <>
+            Scaled infrastructure to support 3x traffic spike, achieving 99.9% app uptime while maintaining sub-200ms response times
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Vosyn (Ontario, Canada - Remote)",
+        timeframe: "Dec 2023 - Jun 2024",
+        role: "AI Software Engineer",
+        achievements: [
+          <>
+            Engineered and fine-tuned multilingual voice synthesis models using Whisper ASR and NVIDIA V100/T4 GPUs, improving Naturalness score (NISQA) by 16.7% (3.47 → 4.05)
+          </>,
+          <>
+            Built scalable microservice infrastructure for AI audio pipelines using AWS, Docker, FastAPI and S3; reduced processing time by 40% and cut operational expenses by $25,000
+          </>,
+          <>
+            Developed end-to-end auto-dubbing and localization pipeline supporting English, French, and Spanish; resolved alignment issues and increased output accuracy by 22%
+          </>,
+          <>
+            Designed inference deployment strategy on AWS SageMaker and containerized models for rapid testing; improved model update cycle from days to hours
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Volansys Technologies (India - Onsite)",
+        timeframe: "2017 - 2020",
+        role: "iOS Developer",
+        achievements: [
+          <>
+            Worked on multiple client projects as part of a 5+ developer iOS team, delivering production apps across IoT and smart home domains
+          </>,
+          <>
+            Developed smart home safety app with smoke/CO alarm monitoring, implementing CoreBluetooth connectivity, WiFi provisioning, and Amazon Alexa integration
+          </>,
+          <>
+            Built UI/UX components and integrated RESTful APIs for real-time device communication and HomeKit compatibility
           </>,
         ],
         images: [],
@@ -156,15 +185,15 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Lakehead University",
+        description: <>Master of Science in Computer Science (May 2023) - Ontario, Canada</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "A D Patel Institute of Technology",
+        description: <>Bachelor of Engineering in Computer Engineering (May 2018) - Gujarat, India</>,
       },
     ],
   },
@@ -173,60 +202,55 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "iOS Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Expert in Swift, SwiftUI, and UIKit with 5+ years building production iOS apps using MVVM architecture.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Swift",
+            icon: "swift",
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "SwiftUI",
+            icon: "swift",
           },
         ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "AI/ML Engineering",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building on-device AI with Core ML, voice synthesis pipelines, and real-time audio processing systems.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "Python",
+            icon: "python",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Core ML",
+            icon: "apple",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
+        images: [],
+      },
+      {
+        title: "Backend & Cloud",
+        description: (
+          <>Experience with Django, FastAPI, AWS (S3, SageMaker), Docker, and REST API development.</>
+        ),
+        tags: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Python",
+            icon: "python",
+          },
+          {
+            name: "AWS",
+            icon: "aws",
           },
         ],
+        images: [],
       },
     ],
   },
