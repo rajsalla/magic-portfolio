@@ -4,6 +4,7 @@ import "@/resources/custom.css";
 
 import classNames from "classnames";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import {
   Background,
@@ -165,6 +166,7 @@ export default async function RootLayout({
           </Flex>
           <Footer />
           <Analytics />
+          <SpeedInsights />
         </Column>
       </Providers>
     </Flex>
