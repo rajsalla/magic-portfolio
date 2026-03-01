@@ -1,0 +1,40 @@
+---
+title: "Carousel AI"
+publishedAt: "2025-03-01"
+summary: "RAG-powered LinkedIn carousel generator that researches the web before writing — no hallucinations, just real-time grounded content."
+images:
+  - "/images/projects/carousel-ai/cover-01.jpg"
+team:
+  - name: "Raj Salla"
+    role: "Creator"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/raj-salla/"
+---
+
+## Overview
+
+Carousel AI is a LinkedIn carousel generator powered by Retrieval-Augmented Generation (RAG). Instead of relying on the model’s training data, it searches the web in real time, crawls full articles, and uses that context to write grounded carousel content — no hallucinations, just real research.
+
+## How It Works
+
+The pipeline runs end-to-end:
+
+1. **Search**: Uses Serper.dev to find relevant sources for the topic
+2. **Crawl**: Firecrawl fetches and extracts full article content
+3. **Store**: Context is stored in Pinecone with semantic caching for reuse
+4. **Write**: GPT-4 generates carousel copy from the retrieved context
+5. **Visuals**: DALL·E 3 generates on-brand background images for each slide
+
+## Technologies Used
+
+- **Serper.dev**: Web search API for real-time discovery
+- **Firecrawl**: Full-page crawling and summarization
+- **Pinecone**: Vector store with semantic caching
+- **GPT-4**: Grounded carousel copy generation
+- **DALL·E 3**: On-brand slide background images
+
+## Key Learnings
+
+- Building a real RAG pipeline end-to-end, from search to generation
+- Integrating full-page summarization into an AI product UX
+- Delivering useful, verifiable content instead of generic or unsourced output
