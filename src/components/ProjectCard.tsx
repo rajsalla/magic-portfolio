@@ -38,6 +38,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           slide: image,
           alt: title,
         }))}
+        controls={images.length > 1}
+        indicator={images.length > 1 ? "line" : false}
+        play={
+          images.length > 1
+            ? {
+                auto: true,
+                interval: 4000,
+                controls: true,
+                progress: false,
+              }
+            : undefined
+        }
       />
       <Flex
         s={{ direction: "column" }}

@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Raj",
   lastName: "Salla",
   name: `Raj Salla`,
-  role: "iOS and AI/ML Engineer",
+  role: "AI/ML Engineer",
   avatar: "/images/avatar.jpg",
   email: "rsalla72@gmail.com",
   location: "America/Thunder_Bay", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -48,23 +48,23 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>iOS and AI/ML Engineer</>,
+  headline: <>AI/ML Engineer</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">LinePal</strong>{" "}
+        <strong className="ml-4">Aviara</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/linepal",
+    href: "/work/vensora",
   },
   subline: (
     <>
-    I'm an iOS and AI/ML engineer with 5+ years building production apps and on-device intelligence. From clinical workflows at Vensora to voice synthesis pipelines at Vosyn, my work sits at the intersection of mobile experience and applied AI.
+    I build production AI systems that ship - from agentic pipelines and RAG architectures to on-device ML for edge hardware.
 </>
   ),
 };
@@ -90,10 +90,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I'm an iOS and AI/ML engineer with 5+ years building production apps and on-device intelligence.
-        From clinical workflows at Vensora to voice synthesis pipelines at Vosyn, my work sits at the
-        intersection of mobile experience and applied AI. I help startups bring their iOS and AI solutions
-        to life — and I care deeply about building technology that genuinely helps people.
+        AI/ML Engineer with 5 years of software engineering experience, including 2 years deploying production-grade Generative AI and voice systems. Focused on moving beyond "AI is cool" to build products that earn, with deep expertise in custom RAG architectures, vector databases (Pinecone), and modular agentic pipelines. Architect end-to-end solutions from Whisper speech recognition to scalable Python APIs that seamlessly translate complex business requirements into reliable, high-performance applications.
       </>
     ),
   },
@@ -104,42 +101,33 @@ const about: About = {
       {
         company: "Vensora Inc (United States - Remote)",
         timeframe: "May 2025 - Present",
-        role: "iOS and AI/ML Engineer",
+        role: "AI/ML Engineer",
         achievements: [
           <>
-            Led end-to-end iPad development integrating BLE peripherals, real-time processing, and Core ML on-device using Swift and MVVM, delivering accessible, localized interfaces
+            Built production ML pipelines in Python and TensorFlow, including data preprocessing (Pandas), dataset versioning on S3, and reproducible training workflows for speech and medical imaging models
           </>,
           <>
-            Translated PRDs into reliable clinical workflows; partnered with product, design, and QA to define release criteria and accessibility standards, improving workflow reliability by 35%
+            Accelerated patient diagnostic workflows and reduced manual workload for doctors, achieving a 35% improvement in diagnostic and documentation accuracy by training and deploying computer vision and NLP models on AWS EC2 using Docker and FastAPI
           </>,
           <>
-            Implemented audio capture and signal pipelines with telemetry and robust error handling, reducing audio processing latency by 42%
-          </>,
-          <>
-            Drove AI model deployment with Core ML and CI/CD to streamline automation, boosting automation efficiency by 30%
+            Led end-to-end edge deployment by converting TensorFlow models to Core ML, applying quantization and pruning for iPad constraints, enabling low-latency, offline inference and reducing on-device inference time by 40%
           </>,
         ],
         images: [],
       },
       {
         company: "LinePal (Ontario, Canada - Remote)",
-        timeframe: "Jun 2024 - Present",
+        timeframe: "Jun 2024 - Apr 2025",
         role: "iOS Engineer",
         achievements: [
           <>
             Architected and delivered a production iOS app from scratch with Swift, SwiftUI, and MVVM; modularized components and state management for maintainability
           </>,
           <>
-            Built and integrated a Django backend with RESTful APIs; designed contracts, auth flows, and data models for dependable client-server operations
+            Scaled LinePal iOS app from 0 to 4.5K users in 2 weeks through rapid iteration and user-driven optimization; later grew to 50K users
           </>,
           <>
-            Optimized custom UI components and animations; improved rendering performance and responsiveness, increasing session duration by 28% and retention by 21%
-          </>,
-          <>
-            Managed App Store releases via TestFlight and AppStore Connect; instrumented Firebase analytics achieving 99.6% crash-free sessions
-          </>,
-          <>
-            Scaled infrastructure to support 3x traffic spike, achieving 99.9% app uptime while maintaining sub-200ms response times
+            Optimized UX with efficient state management and custom UI components, driving engagement and securing a 4+ star App Store rating
           </>,
         ],
         images: [],
@@ -150,16 +138,13 @@ const about: About = {
         role: "AI Software Engineer",
         achievements: [
           <>
-            Engineered and fine-tuned multilingual voice synthesis models using Whisper ASR and NVIDIA V100/T4 GPUs, improving Naturalness score (NISQA) by 16.7% (3.47 → 4.05)
+            Reduced end-to-end processing latency by 40% and saved $25k in annual operational costs by architecting scalable AI microservices using Python, FastAPI, and Docker on AWS
           </>,
           <>
-            Built scalable microservice infrastructure for AI audio pipelines using AWS, Docker, FastAPI and S3; reduced processing time by 40% and cut operational expenses by $25,000
+            Architected and deployed production-grade multilingual voice and Generative AI pipelines using Whisper ASR, LLM-based prompt workflows, and modular containerized services, enabling real-time conversational and localization use cases
           </>,
           <>
-            Developed end-to-end auto-dubbing and localization pipeline supporting English, French, and Spanish; resolved alignment issues and increased output accuracy by 22%
-          </>,
-          <>
-            Designed inference deployment strategy on AWS SageMaker and containerized models for rapid testing; improved model update cycle from days to hours
+            Designed a custom agentic architecture where independent Dockerized services handled transcription, semantic retrieval, translation, and voice synthesis, improving system scalability and fault isolation
           </>,
         ],
         images: [],
@@ -170,7 +155,7 @@ const about: About = {
         role: "iOS Developer",
         achievements: [
           <>
-            Worked on multiple client projects as part of a 5+ developer iOS team, delivering production apps across IoT and smart home domains
+            Achieved a 4.7+ average App Store rating across five successfully delivered iOS applications by collaborating on end-to-end development using Swift, Objective-C, and Xcode.
           </>,
           <>
             Developed smart home safety app with smoke/CO alarm monitoring, implementing CoreBluetooth connectivity, WiFi provisioning, and Amazon Alexa integration
@@ -189,11 +174,11 @@ const about: About = {
     institutions: [
       {
         name: "Lakehead University",
-        description: <>Master of Science in Computer Science (May 2023) - Ontario, Canada</>,
+        description: <>Master of Science in Computer Science (May 2023) - Lakehead University - Ontario, Canada</>,
       },
       {
         name: "A D Patel Institute of Technology",
-        description: <>Bachelor of Engineering in Computer Engineering (May 2018) - Gujarat, India</>,
+        description: <>Bachelor of Engineering in Computer Engineering (May 2018) - ADIT - Gujarat, India</>,
       },
     ],
   },
@@ -202,9 +187,60 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "iOS Development",
+        title: "Machine Learning & NLP",
         description: (
-          <>Expert in Swift, SwiftUI, and UIKit with 5+ years building production iOS apps using MVVM architecture.</>
+          <>Python, PyTorch, TensorFlow, LLMs, RAG, LangChain, semantic search, NLP</>
+        ),
+        tags: [
+          {
+            name: "Python",
+            icon: "python",
+          },
+          {
+            name: "PyTorch",
+            icon: "python",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Data & Backend",
+        description: (
+          <>Pandas, NumPy, FastAPI, RESTful APIs, microservices, asynchronous processing</>
+        ),
+        tags: [
+          {
+            name: "Python",
+            icon: "python",
+          },
+          {
+            name: "FastAPI",
+            icon: "python",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Cloud & MLOps",
+        description: (
+          <>AWS (EC2, SageMaker, EKS, S3), Docker, CI/CD, Pinecone Vector DB, GPU-based inference</>
+        ),
+        tags: [
+          {
+            name: "AWS",
+            icon: "aws",
+          },
+          {
+            name: "Docker",
+            icon: "docker",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Mobile & Edge AI",
+        description: (
+          <>iOS (Swift, SwiftUI, UIKit), Core ML, on-device inference, BLE integration</>
         ),
         tags: [
           {
@@ -212,42 +248,8 @@ const about: About = {
             icon: "swift",
           },
           {
-            name: "SwiftUI",
-            icon: "swift",
-          },
-        ],
-        images: [],
-      },
-      {
-        title: "AI/ML Engineering",
-        description: (
-          <>Building on-device AI with Core ML, voice synthesis pipelines, and real-time audio processing systems.</>
-        ),
-        tags: [
-          {
-            name: "Python",
-            icon: "python",
-          },
-          {
             name: "Core ML",
             icon: "apple",
-          },
-        ],
-        images: [],
-      },
-      {
-        title: "Backend & Cloud",
-        description: (
-          <>Experience with Django, FastAPI, AWS (S3, SageMaker), Docker, and REST API development.</>
-        ),
-        tags: [
-          {
-            name: "Python",
-            icon: "python",
-          },
-          {
-            name: "AWS",
-            icon: "aws",
           },
         ],
         images: [],

@@ -2,8 +2,11 @@
 title: "VosynVerse: AI Voice Synthesis Platform"
 publishedAt: "2023-06-20"
 summary: "AI-powered multilingual voice synthesis and localization platform enabling real-time dubbing. Breaks language barriers by letting users consume content in their native language."
+order: 2
 images:
   - "/images/projects/vosynverse/cover-01.jpg"
+  - "/images/projects/vosynverse/cover-02.png"
+  - "/images/projects/vosynverse/cover-03.png"
 team:
   - name: "Raj Salla"
     role: "AI Software Engineer"
@@ -13,45 +16,32 @@ team:
 
 ## Overview
 
-VosynVerse is an AI-powered multilingual voice synthesis and localization platform that enables real-time dubbing of content across languages. The platform breaks down language barriers by allowing users to consume content in their native language with natural-sounding AI-generated voices.
+VosynVerse is a production-grade multilingual AI platform that breaks language barriers through real-time voice synthesis and dubbing. Built on a modular agentic pipeline — ASR → translation → voice synthesis — it enables content to be consumed in any language with natural-sounding AI-generated voices, deployed on scalable cloud infrastructure.
 
 ## Key Features
 
-- **Multilingual Support**: Real-time voice synthesis in English, French, and Spanish
-- **High-Quality Voice Cloning**: Natural-sounding voice generation with 16.7% improvement in NISQA naturalness score
-- **Real-time Processing**: 40% reduction in processing time through optimized pipelines
-- **Scalable Architecture**: Built on AWS infrastructure with Docker containerization
-- **Advanced ASR**: Whisper ASR integration for accurate speech recognition
+- **Agentic Pipeline Architecture**: Independent, stateful services for transcription, translation, and synthesis — each fault-isolated and independently scalable
+- **Whisper ASR Integration**: High-accuracy speech recognition as the pipeline entry point
+- **LLM-Powered Translation**: GPT-3.5 for context-aware, tone-preserving language translation
+- **Voice Synthesis Engine**: Natural-sounding voice generation with 16.7% improvement in NISQA naturalness score
+- **Real-time Processing**: 40% reduction in end-to-end latency through optimized async pipelines
+- **Cloud-Native Deployment**: AWS S3 + SageMaker + Docker for production-grade scalability
 
 ## Technologies Used
 
-- **Python**: Core language for AI/ML pipeline development
-- **Whisper ASR**: OpenAI's Whisper for automatic speech recognition
-- **AWS Services**: S3 for storage, SageMaker for model deployment
-- **Docker**: Containerization for consistent deployment
-- **FastAPI**: High-performance API framework
-- **GPT-3.5**: Language processing and translation
+Python · FastAPI · Whisper ASR · GPT-3.5 · AWS (S3, SageMaker, EC2) · Docker · Async microservices
 
 ## Technical Achievements
 
-The platform represents a significant advancement in voice synthesis technology:
-
-- **16.7% NISQA Improvement**: Enhanced naturalness score through optimized voice synthesis models
-- **40% Faster Processing**: Reduced end-to-end processing time through pipeline optimization
-- **Multi-language Pipeline**: Seamless dubbing across English, French, and Spanish
-- **Production-Ready**: Deployed on AWS with scalable infrastructure
+- **40% latency reduction** by redesigning the pipeline into async, parallelized microservices
+- **$25K annual cost savings** through containerized deployment and resource optimization
+- **16.7% NISQA improvement** in voice naturalness through model fine-tuning
+- **Production deployment** across English, French, and Spanish with robust error handling for varied audio formats
 
 ## Challenges and Learnings
 
-Building a production-grade voice synthesis platform required solving complex technical challenges:
-
-- Optimizing voice synthesis models to balance quality and processing speed
-- Designing efficient data pipelines to handle large audio files
-- Implementing robust error handling for various audio formats and quality levels
-- Fine-tuning models to preserve emotion and tone across language translations
+The core challenge was redesigning a monolithic processing pipeline into a distributed agentic architecture where each service — transcription, semantic retrieval, translation, synthesis — could fail independently without cascading. This required careful state management, async orchestration, and fallback handling across service boundaries — the same patterns underlying modern LLM agent systems.
 
 ## Outcome
 
-VosynVerse successfully launched as a production platform, demonstrating significant improvements in both quality (16.7% NISQA improvement) and performance (40% processing time reduction). The platform enables content creators to reach global audiences by breaking down language barriers with natural-sounding AI-generated voices.
-
-[Learn more about VosynVerse](https://vosyn.ai/vosynverse/)
+VosynVerse shipped as a production platform serving real multilingual use cases, delivering measurable gains in both quality and performance. The architecture — a chain of specialized AI services with stateful context passing — directly informs how I design agentic systems today.

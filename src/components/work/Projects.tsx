@@ -16,6 +16,12 @@ export function Projects({ range, exclude }: ProjectsProps) {
   }
 
   const sortedProjects = allProjects.sort((a, b) => {
+    // Sort by order field first (if present), then by publishedAt
+    if (a.metadata.order !== undefined && b.metadata.order !== undefined) {
+      return a.metadata.order - b.metadata.order;
+    }
+    if (a.metadata.order !== undefined) return -1;
+    if (b.metadata.order !== undefined) return 1;
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
