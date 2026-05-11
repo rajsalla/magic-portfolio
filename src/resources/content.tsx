@@ -1,10 +1,10 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Raj",
   lastName: "Salla",
-  name: `Raj Salla`,
+  name: "Raj Salla",
   role: "AI/ML Engineer",
   avatar: "/images/avatar.jpg",
   email: "rsalla72@gmail.com",
@@ -103,15 +103,9 @@ const about: About = {
         timeframe: "May 2025 - Present",
         role: "AI/ML Engineer",
         achievements: [
-          <>
-            Built production ML pipelines in Python and TensorFlow, including data preprocessing (Pandas), dataset versioning on S3, and reproducible training workflows for speech and medical imaging models
-          </>,
-          <>
-            Accelerated patient diagnostic workflows and reduced manual workload for doctors, achieving a 35% improvement in diagnostic and documentation accuracy by training and deploying computer vision and NLP models on AWS EC2 using Docker and FastAPI
-          </>,
-          <>
-            Led end-to-end edge deployment by converting TensorFlow models to Core ML, applying quantization and pruning for iPad constraints, enabling low-latency, offline inference and reducing on-device inference time by 40%
-          </>,
+          "Built production ML pipelines in Python and TensorFlow, including data preprocessing (Pandas), dataset versioning on S3, and reproducible training workflows for speech and medical imaging models.",
+          "Accelerated patient diagnostic workflows and reduced manual workload for doctors, achieving a 35% improvement in diagnostic and documentation accuracy by training and deploying computer vision and NLP models on AWS EC2 using Docker and FastAPI.",
+          "Led end-to-end edge deployment by converting TensorFlow models to Core ML, applying quantization and pruning for iPad constraints, enabling low-latency, offline inference and reducing on-device inference time by 40%.",
         ],
         images: [],
       },
@@ -120,15 +114,9 @@ const about: About = {
         timeframe: "Jun 2024 - Apr 2025",
         role: "iOS Engineer",
         achievements: [
-          <>
-            Architected and delivered a production iOS app from scratch with Swift, SwiftUI, and MVVM; modularized components and state management for maintainability
-          </>,
-          <>
-            Scaled LinePal iOS app from 0 to 4.5K users in 2 weeks through rapid iteration and user-driven optimization; later grew to 50K users
-          </>,
-          <>
-            Optimized UX with efficient state management and custom UI components, driving engagement and securing a 4+ star App Store rating
-          </>,
+          "Architected and delivered a production iOS app from scratch with Swift, SwiftUI, and MVVM; modularized components and state management for maintainability.",
+          "Scaled LinePal iOS app from 0 to 4.5K users in 2 weeks through rapid iteration and user-driven optimization; later grew to 50K users.",
+          "Optimized UX with efficient state management and custom UI components, driving engagement and securing a 4+ star App Store rating.",
         ],
         images: [],
       },
@@ -137,32 +125,20 @@ const about: About = {
         timeframe: "Dec 2023 - Jun 2024",
         role: "AI Software Engineer",
         achievements: [
-          <>
-            Reduced end-to-end processing latency by 40% and saved $25k in annual operational costs by architecting scalable AI microservices using Python, FastAPI, and Docker on AWS
-          </>,
-          <>
-            Architected and deployed production-grade multilingual voice and Generative AI pipelines using Whisper ASR, LLM-based prompt workflows, and modular containerized services, enabling real-time conversational and localization use cases
-          </>,
-          <>
-            Designed a custom agentic architecture where independent Dockerized services handled transcription, semantic retrieval, translation, and voice synthesis, improving system scalability and fault isolation
-          </>,
+          "Reduced end-to-end processing latency by 40% and saved $25k in annual operational costs by architecting scalable AI microservices using Python, FastAPI, and Docker on AWS.",
+          "Architected and deployed production-grade multilingual voice and Generative AI pipelines using Whisper ASR, LLM-based prompt workflows, and modular containerized services, enabling real-time conversational and localization use cases.",
+          "Designed a custom agentic architecture where independent Dockerized services handled transcription, semantic retrieval, translation, and voice synthesis, improving system scalability and fault isolation.",
         ],
         images: [],
       },
       {
         company: "Volansys Technologies (India - Onsite)",
-        timeframe: "2017 - 2020",
-        role: "iOS Developer",
+        timeframe: "May 2017 - Mar 2020",
+        role: "Associate Software Engineer",
         achievements: [
-          <>
-            Achieved a 4.7+ average App Store rating across five successfully delivered iOS applications by collaborating on end-to-end development using Swift, Objective-C, and Xcode.
-          </>,
-          <>
-            Developed smart home safety app with smoke/CO alarm monitoring, implementing CoreBluetooth connectivity, WiFi provisioning, and Amazon Alexa integration
-          </>,
-          <>
-            Built UI/UX components and integrated RESTful APIs for real-time device communication and HomeKit compatibility
-          </>,
+          "Achieved a 4.7 average App Store rating across five successfully delivered iOS applications by collaborating on end-to-end development using Swift, Objective-C, and Xcode.",
+          "Reduced app load times by 30% and significantly enhanced user experience by engineering optimized data layers with Core Data and rendering pipelines with Core Animation.",
+          "Boosted user engagement by 30% and reduced code complexity by 20% by integrating Firebase for real-time features and structuring the codebase with scalable MVVM architecture.",
         ],
         images: [],
       },
