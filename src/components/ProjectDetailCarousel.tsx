@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Carousel, Skeleton } from "@once-ui-system/core";
+import { Carousel } from "@once-ui-system/core";
 
 const DEFAULT_SIZES = "(max-width: 960px) 100vw, 960px";
+// iPad app screenshots are ~4:3; reserving this ratio keeps CLS at 0 while the
+// `.project-carousel` CSS rule (object-fit: contain) shows the full image uncropped.
+const DEFAULT_ASPECT_RATIO = "4 / 3";
 const PRELOAD_TIMEOUT_MS = 6000;
 
 interface ProjectCarouselProps {
@@ -12,6 +15,7 @@ interface ProjectCarouselProps {
   priority?: boolean;
   sizes?: string;
   imageAlt?: string;
+  aspectRatio?: string;
 }
 
 export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
@@ -19,8 +23,11 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   priority = false,
   sizes = DEFAULT_SIZES,
   imageAlt,
+  aspectRatio = DEFAULT_ASPECT_RATIO,
 }) => {
   const isMulti = images.length > 1;
+  const remainingImages = isMulti ? images.slice(1) : [];
+
   const [loadedCount, setLoadedCount] = useState(0);
   const [timedOut, setTimedOut] = useState(false);
 
@@ -34,13 +41,14 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
 
   if (images.length === 0) return null;
 
-  const ready = !isMulti || loadedCount >= images.length || timedOut;
+  const autoplayReady =
+    !isMulti || loadedCount >= remainingImages.length || timedOut;
   const markLoaded = () => setLoadedCount((count) => count + 1);
   const altBase = imageAlt ?? "Project image";
 
   return (
     <>
-      {isMulti && !ready && (
+      {isMulti && !autoplayReady && (
         <div
           aria-hidden
           style={{
@@ -52,7 +60,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
             pointerEvents: "none",
           }}
         >
-          {images.map((image) => (
+          {remainingImages.map((image) => (
             <Image
               key={image}
               src={image}
@@ -67,37 +75,29 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
         </div>
       )}
 
-      {ready ? (
-        <Carousel
-          items={images.map((image, idx) => ({
-            slide: image,
-            alt: `${altBase}${imageAlt ? "" : ` ${idx + 1}`}`,
-          }))}
-          controls={isMulti}
-          indicator={isMulti ? "line" : false}
-          aspectRatio="original"
-          priority={priority}
-          sizes={sizes}
-          revealedByDefault
-          play={
-            isMulti
-              ? {
-                  auto: true,
-                  interval: 4000,
-                  controls: true,
-                  progress: false,
-                }
-              : undefined
-          }
-        />
-      ) : (
-        <Skeleton
-          shape="block"
-          radius="l"
-          fillWidth
-          style={{ aspectRatio: "16 / 9", minHeight: "12rem" }}
-        />
-      )}
+      <Carousel
+        className="project-carousel"
+        items={images.map((image, idx) => ({
+          slide: image,
+          alt: `${altBase}${imageAlt ? "" : ` ${idx + 1}`}`,
+        }))}
+        controls={isMulti}
+        indicator={isMulti ? "line" : false}
+        aspectRatio={aspectRatio}
+        priority={priority}
+        sizes={sizes}
+        revealedByDefault
+        play={
+          isMulti
+            ? {
+                auto: autoplayReady,
+                interval: 4000,
+                controls: true,
+                progress: false,
+              }
+            : undefined
+        }
+      />
     </>
   );
 };

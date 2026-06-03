@@ -52,3 +52,16 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+/* Single Geist load: alias body/label to heading variable */
+html {
+  --font-body: var(--font-heading);
+  --font-label: var(--font-heading);
+}
+
+/* Project carousels: show the full image (no cropping) inside the reserved
+   aspect-ratio box. Once UI defaults to object-fit: cover, which clips tall
+   app screenshots, so we force contain so the whole image is always visible. */
+.project-carousel img {
+  object-fit: contain !important;
+}
